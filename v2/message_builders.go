@@ -34,7 +34,7 @@ func NewHandshakeRequestBuilder() *HandshakeRequestBuilder {
 // connection type was provided.
 func (b *HandshakeRequestBuilder) AddSupportedConnectionType(connectionType string) error {
 	switch connectionType {
-	case ConnectionTypeCallbackPolling, ConnectionTypeLongPolling, ConnectionTypeIFrame:
+	case ConnectionTypeCallbackPolling, ConnectionTypeLongPolling, ConnectionTypeIFrame, ConnectionTypeWebsocket:
 		for _, ct := range b.supportedConnectionTypes {
 			if ct == connectionType {
 				return nil
@@ -114,7 +114,7 @@ func (b *ConnectRequestBuilder) AddClientID(clientID string) {
 // purposes of this connection to the request
 func (b *ConnectRequestBuilder) AddConnectionType(connectionType string) error {
 	switch connectionType {
-	case ConnectionTypeCallbackPolling, ConnectionTypeLongPolling, ConnectionTypeIFrame:
+	case ConnectionTypeCallbackPolling, ConnectionTypeLongPolling, ConnectionTypeIFrame, ConnectionTypeWebsocket:
 		b.connectionType = connectionType
 	default:
 		return BadConnectionTypeError{connectionType}

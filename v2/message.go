@@ -217,4 +217,6 @@ const (
 	ConnectionTypeCallbackPolling = "callback-polling"
 	// ConnectionTypeIFrame is a constant for the iframe string
 	ConnectionTypeIFrame = "iframe"
+	// ConnectionTypeWebSocket is a constant for the websocket string
+	ConnectionTypeWebsocket = "websocket"
 )
